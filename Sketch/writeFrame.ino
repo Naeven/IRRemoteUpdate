@@ -5,18 +5,7 @@ void frame() {
     lcd.print(F("|"), OLED_L, i);
     lcd.print(F("|"), OLED_R, i);
   }
-  if (choosePosition != 7
-      && choosePosition != 8
-      && choosePosition != 9)
-  {
-    lcd.print(F("[S]"), 6, 7);
-    lcd.print(F("[OK]"), OLED_C, 7);
-    lcd.print(F("[>>]"), 98, 7);
-  }
-  else
-  {
-    lcd.print(F("[<]"), 6, 7);
-    lcd.print(F("[OK]"), OLED_C, 7);
-    lcd.print(F("[>>]"), 98, 7);
-  }
+  lcd.print(F("[OK]"), OLED_C, 7);
+  lcd.print(F("[>]"), 106, 7);
+  (choosePosition < 6) ? lcd.print(F("[S]"), 4, 7) : lcd.print(F("[<]"), 4, 7);
 }
