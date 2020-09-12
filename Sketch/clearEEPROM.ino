@@ -13,9 +13,8 @@ void clearEEPROM() {
 
   /*Удаление записей из String*/
   for (uint8_t i = 0; i < 6; i++) irCodes[i].remove(0);
-  sendProtocol = 0;
 
+  sendProtocol = 0;
   lcd.clrScr();
-  chargeCheck();
   choosePosition = 0;
 }
