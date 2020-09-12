@@ -29,7 +29,6 @@ void buttSettingsVoid() {
        и вернутся в меню настроек
     */
     lcd.clrScr();
-    chargeCheck();
     arrowPosition = 2;
     choosePosition = 7;
   } else if (choosePosition == 7) {
@@ -38,8 +37,8 @@ void buttSettingsVoid() {
        возвращаемся на первую позицию
     */
     lcd.clrScr();
-    chargeCheck();
     choosePosition = 0;
   }
+  chargeControl(); //вывести уровень заряда
   show(); //главное меню
 }
