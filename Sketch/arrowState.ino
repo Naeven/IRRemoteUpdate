@@ -7,7 +7,7 @@ void arrowPosition_Methode() {
   */
   arrowPosition++; //инкремент
   /*Если стрелочка не на начальной позиции (спустилась вниз), отрисовать пустышку на месте где она была до этого*/
-  if (arrowPosition != 2) lcd.print(F(" "), 6, (arrowPosition - 1));
+  if (arrowPosition != 2) lcd.print(F(" "), 4, (arrowPosition - 1));
   /*
      Если стрелочка прошла последнюю позицию,
      отрисовать пустышку на её месте в последней
@@ -16,6 +16,6 @@ void arrowPosition_Methode() {
   */
   if (arrowPosition > 5) {
     arrowPosition = 2;
-    lcd.print(F(" "), 6, 5);
+    lcd.print(F(" "), 4, 5);
   }
 }
