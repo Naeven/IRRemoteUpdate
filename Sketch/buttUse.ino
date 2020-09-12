@@ -16,7 +16,6 @@ void buttUseVoid() {
     case 6:
       if (!receiverPowerFlag) {
         lcd.clrScr();
-        chargeCheck();
         choosePosition = 7;
         arrowPosition = 2;
       } else {
@@ -37,7 +36,6 @@ void buttUseVoid() {
         case 4:
         case 5:
           lcd.clrScr();
-          chargeCheck();
           choosePosition = (arrowPosition + 4);
           arrowPosition = 2;
           break;
@@ -59,7 +57,6 @@ void buttUseVoid() {
           break;
       }
       lcd.clrScr();
-      chargeCheck();
       choosePosition = 0;
       break;
     case 9:
@@ -72,10 +69,10 @@ void buttUseVoid() {
           break;
       }
       lcd.clrScr();
-      chargeCheck();
       choosePosition = 0;
       break;
   }
+  chargeControl(); //вывести уровень заряда
   show(); //главное меню
 }
 
