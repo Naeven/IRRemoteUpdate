@@ -134,5 +134,6 @@ void loop() {
   if (digitalRead(RECEIVER_POWER) == HIGH) settings();
   /*Если прошло 10 секунд, проверить уровень заряда*/
   if (millis() - timerCharge >= 10000) chargeControl();
-  lcd.print(prozent, 101, 0);
+    /*Вывести уровень заряда на экран*/
+  lcd.print(prozent, 109, 0);
 }
