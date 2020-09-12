@@ -5,7 +5,6 @@ void saveEEPROM () {
   EEPROM.write(0, sendProtocol); //записать выбор протокола по адресу 0
 
   lcd.clrScr();
-  chargeCheck();
   choosePosition = 0;
 }
 
