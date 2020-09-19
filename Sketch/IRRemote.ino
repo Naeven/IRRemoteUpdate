@@ -129,7 +129,7 @@ void loop() {
   /*Если ИК приёмник включен, заходим в настройку*/
   if (digitalRead(RECEIVER_POWER) == HIGH) settings();
   /*Если прошло 10 секунд, проверить уровень заряда*/
-  if (millis() - timer >= 10000) chargeControl();
+  if (millis() - timer >= 5000) chargeControl();
     /*Вывести уровень заряда на экран*/
   lcd.print(prozent, 109, 0);
 }
