@@ -45,11 +45,7 @@ bool flagChoose, flagUse, flagSettings, buttChoose, buttUse, buttSettings, recei
 uint8_t sendProtocol, choosePosition, arrowPosition, EEPROM_adress[EEPROM_NUMBER_OF_RECORDS];
 const uint8_t buttonsArray[] = {SETTINGS_BUTTON_PIN, USE_BUTTON_PIN, CHOOSE_BUTTON_PIN}; //массив с пинами кнопок
 uint32_t timer; //для таймера на millis
-String irCodes[EEPROM_NUMBER_OF_RECORDS]; //хранение ir кодов в виде строки
-/*Для проверки уровня заряда*/
-String prozent;
-unsigned long timerCharge;
-int16_t vcc;
+String irCodes[EEPROM_NUMBER_OF_RECORDS], prozent; //хранение ir кодов в виде строки
 
 /*LG*/
 const char *myCode[] = {
@@ -133,7 +129,7 @@ void loop() {
   /*Если ИК приёмник включен, заходим в настройку*/
   if (digitalRead(RECEIVER_POWER) == HIGH) settings();
   /*Если прошло 10 секунд, проверить уровень заряда*/
-  if (millis() - timerCharge >= 10000) chargeControl();
+  if (millis() - timer >= 10000) chargeControl();
     /*Вывести уровень заряда на экран*/
   lcd.print(prozent, 109, 0);
 }
