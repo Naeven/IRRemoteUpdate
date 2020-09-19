@@ -3,32 +3,12 @@ void show() {
   frame(); //отрисовка "скелета"/рамы
   switch (choosePosition) {
     case 0:
-      lcd.print(F("\202\252\253./\202\353\252\253."), OLED_C, 0); //Вкл./Выкл.
-      lcd.print(F("\212\256\244 \252\255\256\257\252\250:"), OLED_C, 2);
-      lcd.print(irCodes[choosePosition], OLED_C, 3);
-      break;
     case 1:
-      lcd.print(F("\207\242\343\252 \243\340\256\254\347\245"), OLED_C, 0); //Звук громче
-      lcd.print(F("\212\256\244 \252\255\256\257\252\250:"), OLED_C, 2);
-      lcd.print(irCodes[choosePosition], OLED_C, 3);
-      break;
     case 2:
-      lcd.print(F("\207\242\343\252 \342\250\350\245"), OLED_C, 0); //Звук тише
-      lcd.print(F("\212\256\244 \252\255\256\257\252\250:"), OLED_C, 2);
-      lcd.print(irCodes[choosePosition], OLED_C, 3);
-      break;
     case 3:
-      lcd.print(F("\202\353\252\253. \247\242\343\252"), OLED_C, 0); //Выкл. звук
-      lcd.print(F("\212\256\244 \252\255\256\257\252\250:"), OLED_C, 2);
-      lcd.print(irCodes[choosePosition], OLED_C, 3);
-      break;
     case 4:
-      lcd.print(F("\221\253\245\244. \252\240\255\240\253"), OLED_C, 0); //След. канал
-      lcd.print(F("\212\256\244 \252\255\256\257\252\250:"), OLED_C, 2);
-      lcd.print(irCodes[choosePosition], OLED_C, 3);
-      break;
     case 5:
-      lcd.print(F("\217\340\245\244. \252\240\255\240\253"), OLED_C, 0); //Пред. канал
+      lcd.print(button[choosePosition], OLED_C, 0); //Пред. канал
       lcd.print(F("\212\256\244 \252\255\256\257\252\250:"), OLED_C, 2);
       lcd.print(irCodes[choosePosition], OLED_C, 3);
       break;
